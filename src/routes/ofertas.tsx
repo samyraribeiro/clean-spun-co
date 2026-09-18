@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router"; import { CatalogPage } from "@/components/store/store-ui"; import { isPromotionActive, products } from "@/data/store"; import { pageHead } from "@/lib/seo";
+export const Route=createFileRoute("/ofertas")({head:()=>pageHead("Ofertas — [NOME DA LOJA]","Ofertas ativas em panos e kits para limpeza, sem descontos fictícios.","/ofertas"),component:()=> <CatalogPage title="Ofertas" description="Somente promoções válidas e cadastradas pela loja." initialItems={products.filter(p=>isPromotionActive(p))}/>});

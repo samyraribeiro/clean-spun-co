@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router"; import { CatalogPage } from "@/components/store/store-ui"; import { products } from "@/data/store"; import { pageHead } from "@/lib/seo";
+export const Route=createFileRoute("/kits")({head:()=>pageHead("Kits para Limpeza — [NOME DA LOJA]","Kits de panos para limpeza doméstica, comercial e profissional.","/kits"),component:()=> <CatalogPage title="Kits para limpeza" description="Opções em quantidade para sua rotina." initialItems={products.filter(p=>p.variations.length>1||p.categorySlug==="kits")}/>});
