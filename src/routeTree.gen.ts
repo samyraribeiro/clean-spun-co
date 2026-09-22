@@ -11,9 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as KitsRouteImport } from './routes/kits'
 import { Route as OfertasRouteImport } from './routes/ofertas'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as ProdutosRouteImport } from './routes/produtos'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
+import { Route as TrocasEDevolucoesRouteImport } from './routes/trocas-e-devolucoes'
 import { Route as CategoriaSlugRouteImport } from './routes/categoria.$slug'
 import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 
@@ -27,6 +31,11 @@ const CarrinhoRoute = CarrinhoRouteImport.update({
   path: '/carrinho',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KitsRoute = KitsRouteImport.update({
   id: '/kits',
   path: '/kits',
@@ -37,9 +46,24 @@ const OfertasRoute = OfertasRouteImport.update({
   path: '/ofertas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProdutosRoute = ProdutosRouteImport.update({
   id: '/produtos',
   path: '/produtos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrocasEDevolucoesRoute = TrocasEDevolucoesRouteImport.update({
+  id: '/trocas-e-devolucoes',
+  path: '/trocas-e-devolucoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoriaSlugRoute = CategoriaSlugRouteImport.update({
@@ -56,18 +80,26 @@ const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/kits': typeof KitsRoute
   '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/categoria/$slug': typeof CategoriaSlugRoute
   '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/kits': typeof KitsRoute
   '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/categoria/$slug': typeof CategoriaSlugRoute
   '/produto/$slug': typeof ProdutoSlugRoute
 }
@@ -75,9 +107,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/kits': typeof KitsRoute
   '/ofertas': typeof OfertasRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
+  '/trocas-e-devolucoes': typeof TrocasEDevolucoesRoute
   '/categoria/$slug': typeof CategoriaSlugRoute
   '/produto/$slug': typeof ProdutoSlugRoute
 }
@@ -86,27 +122,39 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/carrinho'
+    | '/contato'
     | '/kits'
     | '/ofertas'
+    | '/politica-de-privacidade'
     | '/produtos'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
     | '/categoria/$slug'
     | '/produto/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/carrinho'
+    | '/contato'
     | '/kits'
     | '/ofertas'
+    | '/politica-de-privacidade'
     | '/produtos'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
     | '/categoria/$slug'
     | '/produto/$slug'
   id:
     | '__root__'
     | '/'
     | '/carrinho'
+    | '/contato'
     | '/kits'
     | '/ofertas'
+    | '/politica-de-privacidade'
     | '/produtos'
+    | '/termos-de-uso'
+    | '/trocas-e-devolucoes'
     | '/categoria/$slug'
     | '/produto/$slug'
   fileRoutesById: FileRoutesById
@@ -114,9 +162,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CarrinhoRoute: typeof CarrinhoRoute
+  ContatoRoute: typeof ContatoRoute
   KitsRoute: typeof KitsRoute
   OfertasRoute: typeof OfertasRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ProdutosRoute: typeof ProdutosRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
+  TrocasEDevolucoesRoute: typeof TrocasEDevolucoesRoute
   CategoriaSlugRoute: typeof CategoriaSlugRoute
   ProdutoSlugRoute: typeof ProdutoSlugRoute
 }
@@ -137,6 +189,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CarrinhoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kits': {
       id: '/kits'
       path: '/kits'
@@ -151,11 +210,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfertasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/produtos': {
       id: '/produtos'
       path: '/produtos'
       fullPath: '/produtos'
       preLoaderRoute: typeof ProdutosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trocas-e-devolucoes': {
+      id: '/trocas-e-devolucoes'
+      path: '/trocas-e-devolucoes'
+      fullPath: '/trocas-e-devolucoes'
+      preLoaderRoute: typeof TrocasEDevolucoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/categoria/$slug': {
@@ -178,9 +258,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CarrinhoRoute: CarrinhoRoute,
+  ContatoRoute: ContatoRoute,
   KitsRoute: KitsRoute,
   OfertasRoute: OfertasRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ProdutosRoute: ProdutosRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
+  TrocasEDevolucoesRoute: TrocasEDevolucoesRoute,
   CategoriaSlugRoute: CategoriaSlugRoute,
   ProdutoSlugRoute: ProdutoSlugRoute,
 }
