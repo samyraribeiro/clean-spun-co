@@ -8,7 +8,7 @@ import pratoImage from "@/assets/produto-pano-prato.jpg";
 
 export const STORE = {
   name: "[NOME DA LOJA]",
-  whatsapp: "[WHATSAPP]",
+  whatsapp: "5527988573982",
   instagram: "[INSTAGRAM]",
   email: "[EMAIL]",
   address: "[ENDEREÇO]",
