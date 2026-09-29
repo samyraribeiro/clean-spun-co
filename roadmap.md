@@ -4,4 +4,4 @@
 - [x] Centralizar configurações e produtos
 - [x] Implementar navegação, busca, catálogo e páginas institucionais
 - [x] Implementar produto, carrinho persistente e WhatsApp
-- [ ] Validar desktop, celular e interações
+- [x] Validar desktop, celular e interações
